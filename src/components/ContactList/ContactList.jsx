@@ -1,25 +1,29 @@
 import PropTypes from 'prop-types';
+// import { nanoid } from 'nanoid';
 import { ContactItem } from 'components/ContactItem';
 
 export const ContactList = ({ contacts, onDelete }) => {
+  // const contactId = nanoid();
   return (
     <ul>
       {contacts.map(({ id, name, number }) => (
         <ContactItem
-        // key={id}
-        // id={id}
-        // name={name}
-        // number={number}
-        // onDeleteContact={() = onDelete(id)}
+          key={id}
+          id={id}
+          name={name}
+          number={number}
+          onClick={(id = onDelete(id))}
         />
       ))}
     </ul>
     // <ul>
     //   {contacts.map(({ id, name, number }) => (
     //     <li key={id}>
-    //       <p>{name}</p>
-    //       <p>{number}</p>
-    //       <button onClick={() => onDelete(id)}>Видалити</button>
+    //       <p>
+    //         {name} : {number}
+    //       </p>
+
+    //       <button onClick={() => onDelete(id)}>Delete</button>
     //     </li>
     //   ))}
     // </ul>

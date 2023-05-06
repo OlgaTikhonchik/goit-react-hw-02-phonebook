@@ -5,5 +5,5 @@ export const Container = styled.div`
   margin: 40px auto;
   border: 2px solid grey;
   border-radius: 10px;
-  background-color: lime;
+  background-color: white;
 `;
