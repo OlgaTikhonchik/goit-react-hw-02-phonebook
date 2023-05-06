@@ -12,24 +12,40 @@ export class App extends Component {
     filter: '',
   };
 
-  deleteContact = contactId => {
-    this.setState(prevState => ({
-      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
-    }));
-  };
+  addContact = contacts => {
+    // const checkedContacts = contacts.find(
+    //   contact => contact.name === this.name
+    // );
+    // if (checkedContacts) {
+    //   alert(`${this.name} is already in contacts`);
+    //   return;
+    // }
 
-  addContact = (name, number) => {
     const contact = {
       id: nanoid(),
-      name,
-      number,
+      // name,
+      // number,
+      contacts,
     };
     this.setState(prevState => {
       return { contacts: [contact, ...prevState.contacts] };
     });
+
+    console.log(this.state.contacts);
   };
 
-  handlerChangeFilter = e => this.setState({ filter: e.target.value });
+  deleteContact = contactId => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
+    }));
+
+    console.log(contactId);
+  };
+
+  handlerChangeFilter = e => {
+    this.setState({ filter: e.target.value });
+    console.log(this.state.filter);
+  };
 
   render() {
     return (

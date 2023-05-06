@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
-// import { nanoid } from 'nanoid';
+
 import { ContactItem } from 'components/ContactItem';
 
 export const ContactList = ({ contacts, onDelete }) => {
-  // const contactId = nanoid();
   return (
     <ul>
       {contacts.map(({ id, name, number }) => (
