@@ -12,7 +12,7 @@ export const ContactList = ({ contacts, onDelete }) => {
           id={id}
           name={name}
           number={number}
-          onClick={(id = onDelete(id))}
+          onDelete={onDelete}
         />
       ))}
     </ul>

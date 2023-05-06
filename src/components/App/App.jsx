@@ -18,14 +18,15 @@ export class App extends Component {
     }));
   };
 
-  addContact = ({ name, number }) => {
+  addContact = (name, number) => {
     const contact = {
       id: nanoid(),
       name,
       number,
     };
-    this.setState(({ contacts }) => ({ contacts: [contact, ...contacts] }));
-    console.log(this.state.contacts);
+    this.setState(prevState => {
+      return { contacts: [contact, ...prevState.contacts] };
+    });
   };
 
   handlerChangeFilter = e => this.setState({ filter: e.target.value });
@@ -36,11 +37,7 @@ export class App extends Component {
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.addContact} />
         <h2>Contacts</h2>
-        <Filter
-          filter={this.state.filter}
-          value={this.filter}
-          onChange={this.handlerChangeFilter}
-        />
+        <Filter value={this.state.filter} onChange={this.handlerChangeFilter} />
         <ContactList contacts={contacts} onDelete={this.deleteContact} />
       </Container>
     );
