@@ -22,11 +22,14 @@ export const Input = styled.input`
 }`;
 
 export const Label = styled.label`
-    font-size: 24px;
-    font-weight: 700;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    color: #653463;
+  font-size: 24px;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: #653463;
 
-}`;
+  :hover {
+    color: #865684;
+  }
+`;
