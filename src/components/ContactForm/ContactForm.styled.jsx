@@ -28,6 +28,7 @@ export const Label = styled.label`
     align-items: center;
     justify-content: center;
     display: flex;
+    color: #653463;
 
 }`;
 
@@ -38,9 +39,17 @@ export const Button = styled.button`
   border: 2px solid #653463;
   border-radius: 10px;
   margin: 0 auto;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 700;
   text-align: center;
   justify-content: center;
-
+  background-color: #7e7955;
   display: flex;
+  color: #653463;
+  box-shadow: 0px 0px 13px -1px rgba(43, 43, 59, 0.59);
+
+  :hover {
+    color: #865684;
+    background-color: #a7a073;
+  }
 `;
