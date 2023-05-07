@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid';
 import { ContactForm } from 'components/ContactForm';
 import { Filter } from 'components/Filter';
 import { ContactList } from 'components/ContactList';
-import { Container, Label, MainTitle, Title } from './App.styled';
+import { Container, MainTitle, Title } from './App.styled';
 import initialContacts from 'components/contacts.json';
 
 export class App extends Component {
