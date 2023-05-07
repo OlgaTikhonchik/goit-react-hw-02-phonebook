@@ -14,14 +14,13 @@ export class App extends Component {
   };
 
   addContact = (name, number) => {
-    // const repeatName = this.state.contacts.some(
-    //   el => el.name.toLowerCase() === name.toLowerCase()
-    // );
-    // if (
-    //   this.state.contacts.filter(contact => contact.name === name).length > 0
-    // ) {
-    //   return alert(`${name} is already in contacts`);
-    // }
+    if (
+      this.state.contacts.some(
+        el => el.name.toLowerCase() === name.toLowerCase()
+      )
+    ) {
+      return alert(`${name} вже є в контактах`);
+    }
 
     const contact = {
       id: nanoid(),
@@ -29,7 +28,6 @@ export class App extends Component {
       number,
     };
 
-    // this.setState(({ contacts }) => ({ contacts: [contact, ...contacts] }));
     this.setState(prevState => {
       return { contacts: [contact, ...prevState.contacts] };
     });
@@ -45,7 +43,7 @@ export class App extends Component {
   };
 
   handlerChangeFilter = e => {
-    this.setState({ filter: e.currenTarget.value });
+    this.setState({ filter: e.currentTarget.value });
     console.log(this.state.filter);
   };
 
